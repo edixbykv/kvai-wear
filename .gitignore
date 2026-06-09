@@ -42,3 +42,5 @@ next-env.d.ts
 
 # asset pipeline working dir (source image kept in /scripts)
 /_raw/
+
+.vercel

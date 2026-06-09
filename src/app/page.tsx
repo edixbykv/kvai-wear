@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/product-card";
 import { Reveal } from "@/components/reveal";
 import { ColorRail } from "@/components/color-rail";
+import { HeroPolo } from "@/components/hero-polo";
 import { PRODUCTS, imagesFor } from "@/lib/products";
 
 const bestsellers = PRODUCTS.filter((p) => p.badge === "Bestseller" || p.badge === "Premium").slice(0, 4);
@@ -15,8 +16,8 @@ export default function Home() {
     <div>
       {/* HERO */}
       <section className="relative overflow-hidden border-b">
-        <div className="mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 sm:px-6 lg:grid-cols-2 lg:gap-6 lg:px-8 lg:py-20">
-          <Reveal className="order-2 lg:order-1">
+        <div className="mx-auto grid max-w-7xl items-center gap-6 px-4 pb-10 pt-6 sm:px-6 lg:grid-cols-2 lg:gap-6 lg:px-8 lg:py-14">
+          <Reveal className="order-1">
             <p className="mb-4 text-[11px] font-medium uppercase tracking-luxe text-muted-foreground">
               The Polo, Perfected
             </p>
@@ -41,20 +42,8 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <Reveal delay={0.1} className="order-1 lg:order-2">
-            <div className="product-surface relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden">
-              <Image
-                src={imagesFor("navy").front}
-                alt="KVAI signature polo"
-                fill
-                priority
-                sizes="(max-width: 1024px) 90vw, 480px"
-                className="object-contain p-6"
-              />
-              <span className="absolute bottom-5 left-5 text-[11px] uppercase tracking-luxe text-muted-foreground">
-                Signature Polo · Navy
-              </span>
-            </div>
+          <Reveal delay={0.1} className="order-2">
+            <HeroPolo color="navy" name="Signature Polo · Navy" />
           </Reveal>
         </div>
 
