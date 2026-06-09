@@ -1,0 +1,74 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* ---- KVAI Wear design tokens : luxury minimal neutrals ---- */
+:root {
+  --background: #faf9f7;
+  --foreground: #1a1816;
+  --card: #ffffff;
+  --muted: #f1efea;
+  --muted-foreground: #756f67;
+  --border: #e6e2db;
+  --input: #e6e2db;
+  --ring: #1a1816;
+  --accent: #2d2a26;
+  --radius: 0.25rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-cormorant);
+  --radius-base: var(--radius);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.font-display {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
+
+/* refined uppercase tracking used across the brand */
+.tracking-luxe {
+  letter-spacing: 0.22em;
+}
+
+/* hide scrollbar utility for horizontal rails */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* subtle product surface */
+.product-surface {
+  background:
+    radial-gradient(120% 120% at 50% 0%, #ffffff 0%, #f3f1ec 70%, #ece9e2 100%);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee { animation: marquee 28s linear infinite; }
+
+::selection { background: #1a1816; color: #faf9f7; }
